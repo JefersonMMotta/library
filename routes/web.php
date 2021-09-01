@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
  */
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\VeiculosController;
+use App\Http\Controllers\ProdutosController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -38,5 +39,16 @@ Route::prefix('veiculos')->group(function () {
     Route::post('store/{id}', [VeiculosController::class, 'store']);
     Route::post('update/{id}', [VeiculosController::class, 'update']);
     Route::post('delete/{id}', [VeiculosController::class, 'delete']);
+});
+
+Route::prefix('produtos')->group(function () {
+    Route::get('/', [ProdutosController::class, 'index']);
+    Route::get('cadastrar', [ProdutosController::class, 'create']);
+    Route::get('detalhes/{id}', [ProdutosController::class, 'show']);
+    Route::get('editar/{id}', [ProdutosController::class, 'edit']);
+    Route::get('excluir/{id}', [ProdutosController::class, 'destroy']);
+    Route::post('store', [ProdutosController::class, 'store']);
+    Route::post('update/{id}', [ProdutosController::class, 'update']);
+    Route::post('delete/{id}', [ProdutosController::class, 'delete']);
 });
 

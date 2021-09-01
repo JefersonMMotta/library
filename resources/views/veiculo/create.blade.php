@@ -2,7 +2,7 @@
 
 @section('content')
 <a class="btn btn-secondary float-right btn-sm" href="{{url('veiculos')}}">Voltar</a>
-<h6>Novo Veículo </h6>
+<h6>Novo Veículo</h6>
 <form method="post" action="{{url('veiculos/store/'.$cliente->id)}}" class="row g-3">
     @csrf
     <div class="col-md-4">
